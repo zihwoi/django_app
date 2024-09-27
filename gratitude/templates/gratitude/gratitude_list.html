@@ -1,0 +1,7 @@
+<h1>Gratitude Entries</h1>
+<ul>
+    {% for entry in entries %}
+        <li>{{ entry.text }} ({{ entry.created_at }})</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'add_gratitude' %}">Add New Entry</a>

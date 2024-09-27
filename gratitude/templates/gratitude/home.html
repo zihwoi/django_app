@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <title>Gratitude Journal</title>
+
+</head>
+<body>
+    <h1>Gratitude Journal</h1>
+    <h2>Your Gratitude Entries:</h2>
+
+    {% if entries %}
+        <ul>
+            {% for entry in entries %}
+                <li>
+                    <h3>{{ entry.title }}</h3>
+                    <p>{{ entry.content }}</p>
+                    <small>Posted on {{ entry.date_posted }}</small>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No gratitude entries found. Start logging your gratitude today!</p>
+    {% endif %}
+</body>
+</html>
